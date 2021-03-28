@@ -37,6 +37,11 @@
                 <dd>
                     <input type="text" name="credit">
                 </dd>
+                <dd>
+                    <input type="radio" value="visa" name="card"> Visa
+                    <input type="radio" value="masterCard" name="card"> MasterCard
+                </dd>
+
             </dl>
 
             <div>

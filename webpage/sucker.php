@@ -20,7 +20,14 @@
         }?></dd>
 
     <dt>Credit Card</dt>
-    <dd><?php echo ($_REQUEST["credit"])?$_REQUEST["credit"]:"N/A"?></dd>
+    <dd><?php if(isset($_REQUEST["credit"]) && isset($_REQUEST["card"]))
+        {
+            echo $_REQUEST["credit"];
+            echo "(";
+            echo $_REQUEST["card"];
+            echo ")";
+        }
+        ?></dd>
 </dl>
 </body>
 </html>
