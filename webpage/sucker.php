@@ -9,11 +9,11 @@
 <h1>Thanks, sucker!</h1>
 
 <p>Your information has been recorded.</p>
-
+<?php
+?>
 <dl>
     <dt>Name</dt>
     <dd><?php echo ($_REQUEST["name"])?$_REQUEST["name"]:"N/A";  ?></dd>
-
     <dt>Section</dt>
     <dd><?php if(isset($_REQUEST["sections"])) {foreach ($_REQUEST["sections"] as $section ){echo $section;} } else{
         echo "N/A";
@@ -28,6 +28,15 @@
             echo ")";
         }
         ?></dd>
+    <?php
+    $data = "";
+    foreach($_REQUEST["sections"] as $section)
+    {
+        $data = $_REQUEST["name"].";".$data.$section.";";
+    }
+    $data.=$_REQUEST["credit"].";".$_REQUEST["card"].";";
+    file_put_contents("sucker.txt", $data);
+    ?>
 </dl>
 </body>
 </html>
